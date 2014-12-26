@@ -103,8 +103,8 @@ function p = genpath_exclude(d,excludeDirs)
 	for i=1:length(dirs)
 		dirname = dirs(i).name;
 		%NOTE: regexp ignores '.', '..', '@.*', and 'private' directories by default. 
-		if ~any(regexp(dirname,['^\.$|^\.\.$|^\@.*|^private$|' excludeStr ],'start'))
-		  p = [p genpath_exclude(fullfile(d,dirname),excludeStr)]; % recursive calling of this function.
-		end
+      if ~any(regexp(dirname,['^\.$|^\.\.$|^\@.*|^\+.*|^private$|' excludeStr ],'start'))
+         p = [p genpath_exclude(fullfile(d,dirname),excludeStr)]; % recursive calling of this function.
+      end
 	end
 end
