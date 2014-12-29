@@ -7,10 +7,10 @@
 % This works very quickly, for any type of input (cell/non-cell), and any 
 % type of data (numeric/strings/?).
 
-function data = deCell(data)
+function data = decell(data)
 
 try
-   data = cellfun(@deCell,data,'un',0);
+   data = cellfun(@decell,data,'un',0);
    if any(cellfun(@iscell,data))
       data = [data{:}];
    end

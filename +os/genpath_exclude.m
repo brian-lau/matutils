@@ -68,6 +68,9 @@
 %
 
 function p = genpath_exclude(d,excludeDirs)
+
+   import os.*
+
 	% if the input is a string, then use it as the searchstr
 	if ischar(excludeDirs)
 		excludeStr = excludeDirs;
